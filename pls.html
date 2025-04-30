@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mehnaaz Husain Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      padding: 60px 20px;
+      line-height: 1.6;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    body.dark-mode {
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+    }
+    .container {
+      padding: 0 20px;
+    }
+    h1 {
+      font-weight: 600;
+      font-size: 2rem;
+      margin-bottom: 6px;
+    }
+    h2 {
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #ccc;
+    }
+    p, li {
+      font-weight: 300;
+      font-size: 0.95rem;
+    }
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .info {
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      row-gap: 8px;
+      align-items: flex-start;
+    }
+    .toggle-switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 26px;
+      background: #ccc;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .toggle-circle {
+      height: 22px;
+      width: 22px;
+      background: #fff;
+      border-radius: 50%;
+      position: relative;
+      left: 2px;
+      transition: transform 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .toggle-circle svg {
+      height: 14px;
+      width: 14px;
+      color: #333;
+      transition: transform 0.4s ease;
+    }
+    .toggle-switch.active {
+      background: #4f4f4f;
+    }
+    .toggle-switch.active .toggle-circle {
+      transform: translateX(24px);
+      background: #00cc99;
+    }
+    .toggle-switch.active .toggle-circle svg {
+      color: white;
+    }
+    @media print {
+      .toggle-switch {
+        display: none;
+      }
+    }
+    .theme-icon {
+      display: block;
+      height: 16px;
+      width: 16px;
+    }
+    #social-links {
+      display: none;
+      position: absolute;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px;
+      top: 2.5rem;
+      left: 0;
+      z-index: 10;
+    }
+    #social-links a {
+      display: block;
+      color: #007aff;
+      text-decoration: none;
+      margin-bottom: 6px;
+    }
+  </style>
+<style>
+  .petal {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle at center, #f4d35e 0%, #e09f3e 100%);
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: fall 1s ease-out forwards;
+  }
+  @keyframes fall {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px) scale(0.2) rotate(180deg);
+    opacity: 0;
+  }
+}
+  }
+</style>
+</head>
+<body>
+  <div class="toggle-switch" id="darkToggle">
+    <div class="toggle-circle">
+      <i id="themeIcon" data-lucide="sun" class="theme-icon"></i>
+    </div>
+  </div>
+
+  <main>
+    <div class="info">
+      <div style="flex: 1 1 300px; min-width: 280px;">
+        <h1 style="margin-bottom: 4px; font-size: 2rem; font-weight: 600; transition: transform 0.3s ease; display: inline-block; cursor: pointer; position: relative;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onclick="showLinks(event)">Mehnaaz Husain</h1>
+        <div id="social-links">
+          <a href="https://www.instagram.com/meforya" target="_blank">Instagram</a>
+          <a href="https://www.linkedin.com/in/mehnaazhusain" target="_blank">LinkedIn</a>
+        </div>
+        <p style="font-size: 1.15rem; color: #007aff; font-weight: 500; margin-bottom: 16px;">Narrative Designer</p>
+        <p><strong>Email:</strong><br>
+        <a href="mailto:mehnaazhusain@gmail.com?subject=Collaboration%20Opportunity" style="color:#007aff;text-decoration:none;">mehnaazhusain@gmail.com</a></p>
+        <p style="margin-top: 12px;"><strong>Phone:</strong><br>
+        <a href="#" id="phone-link" style="color:#007aff;text-decoration:none; font-size: 0.95rem;">+91 9461 153 073</a></p>
+      </div>
+      <div style="flex: 1 1 200px; min-width: 200px; padding-top: 96px;">
+        <p><strong>Portfolio:</strong><br>
+        <a href="https://www.meforya.com" target="_blank" style="color:#007aff;text-decoration:none;">www.meforya.com</a></p>
+        <p style="margin-top: 12px;"><strong>Languages:</strong><br>
+        English, Hindi</p>
+      </div>
+    </div>
+
+    <section>
+      <h2>About Me</h2>
+      <p>Hi, I’m Mehnaaz — also known as Meforya. I’m a narrative designer who loves turning tiny feelings and big ideas into stories through drawing, motion, and sound. With a background in communication design and a deep love for film, I craft visuals that feel personal, a little poetic, and always curious.</p>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <p><strong>Bachelor of Design (Communication Design)</strong><br>
+        <span>2020 – 2024</span><br>
+        <a href="https://www.nid.ac.in/" target="_blank" style="color:#007aff;text-decoration:none;">
+          <i data-lucide="map-pin" style="height: 14px; width: 14px; vertical-align: text-bottom;"></i>
+          National Institute of Design, Andhra Pradesh
+        </a>
+      </p><br>
+      <p><strong>Class XII (Senior Secondary)</strong><br>
+        <span>Completed: 2020</span><br>
+        <a href="https://www.stmarysschooludaipur.com/" target="_blank" style="color:#007aff;text-decoration:none;">
+          <i data-lucide="map-pin" style="height: 14px; width: 14px; vertical-align: text-bottom;"></i>
+          St. Mary’s Convent Sr. Sec. School, Udaipur
+        </a>
+      </p>
+    </section>
+
+    <section>
+  <h2>Projects & Experience</h2>
+  <ul>
+    <li>Stop Motion Animation Film — <em>“Mind Hatch”</em></li>
+    <li>Written and Illustrated Children’s Book — <em>“The Flight”</em></li>
+    <li>Internship as Animator — Plankton Collective</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Collaborations & Recognitions</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center;">
+    <img src="images/plankton.png" alt="Plankton Collective" style="height: 26px;">
+    <img src="images/postoffice.png" alt="Post Office Studios" style="height: 32px;">
+    <img src="images/tvpaint.png" alt="TVPaint" style="height: 32px;">
+    <img src="images/procreate.png" alt="Procreate" style="height: 24px;">
+  </div>
+  <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; margin-top: 12px;">
+    <img src="images/hachette.png" alt="Hachette India" style="height: 24px;">
+    <img src="images/niyogi.png" alt="Niyogi Books" style="height: 24px;">
+    <img src="images/speakingtiger.png" alt="Speaking Tiger" style="height: 28px;">
+  </div>
+</section>
+
+    <section>
+  <h2>Software Skills</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 8px; font-size: 0.95rem; align-items: center;">
+    <span>Adobe Suite</span>
+    <span style="opacity: 0.4; font-weight: bold;">•</span>
+    <span>Toon Boom Harmony</span>
+    <span style="opacity: 0.4; font-weight: bold;">•</span>
+    <span>TVPaint</span>
+    <span style="opacity: 0.4; font-weight: bold;">•</span>
+    <span>Procreate</span>
+    <span style="opacity: 0.4; font-weight: bold;">•</span>
+    <span>Figma</span>
+  </div>
+</section>
+    </section>
+
+    <section>
+      <h2>Achievements</h2>
+      <ul>
+        <li>Winner — State Level Essay Writing, United Nations Information Centre</li>
+        <li>Panel’s Choice Winner — Dainik Bhaskar Junior Editor II, III</li>
+        <li>Winner — 94.3 My FM’s Painting Competition, Rangrezz</li>
+        <li>First Runner-up — State Drawing Competition (Max Life, Axis Bank)</li>
+        <li>Artist of the Year — Jamna Devi Chugh Memorial Award, St. Mary’s</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Interests</h2>
+      <p>Writing, Poetry, Swimming, Badminton, Skating</p>
+    </section>
+  </main>
+
+  <script>
+    function showLinks(event) {
+      event.stopPropagation();
+      const links = document.getElementById('social-links');
+      links.style.display = links.style.display === 'block' ? 'none' : 'block';
+      document.addEventListener('click', hideLinks);
+    }
+    function hideLinks() {
+      const links = document.getElementById('social-links');
+      links.style.display = 'none';
+      document.removeEventListener('click', hideLinks);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeIcon = document.getElementById('themeIcon');
+      const toggle = document.getElementById('darkToggle');
+
+      const hour = new Date().getHours();
+      const prefersDark = hour >= 19;
+      if (prefersDark) {
+        document.body.classList.add('dark-mode');
+        toggle.classList.add('active');
+      }
+
+      const iconName = document.body.classList.contains('dark-mode') ? 'moon' : 'sun';
+      if (themeIcon) {
+        themeIcon.setAttribute('data-lucide', iconName);
+        lucide.createIcons();
+      }
+
+      toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        toggle.classList.toggle('active');
+
+        const newIcon = document.body.classList.contains('dark-mode') ? 'moon' : 'sun';
+        if (themeIcon) {
+          themeIcon.animate([
+            { transform: 'rotate(0deg)' },
+            { transform: 'rotate(180deg)' }
+          ], {
+            duration: 400,
+            easing: 'ease-in-out'
+          });
+          themeIcon.setAttribute('data-lucide', newIcon);
+          lucide.createIcons();
+        }
+      });
+    });
+  </script>
+<script>
+  let lastX = 0;
+  let lastY = 0;
+  let lastTime = Date.now();
+
+  let lastRender = 0;
+document.addEventListener('mousemove', e => {
+  const now = Date.now();
+  if (now - lastRender < 100) return;
+  lastRender = now;
+    const now = Date.now();
+    const dx = e.pageX - lastX;
+    const dy = e.pageY - lastY;
+    const dt = now - lastTime;
+    const speed = Math.sqrt(dx * dx + dy * dy) / dt;
+    const count = speed > 0.6 ? Math.min(Math.floor(speed * 2), 3) : 0; // max 8 petals
+
+    for (let i = 0; i < count; i++) {
+    const petal = document.createElement('div');
+    const size = 8 - i * 1.5;
+    petal.style.width = `${size}px`;
+    petal.style.height = `${size}px`;
+      petal.className = 'petal';
+      const offsetX = (Math.random() - 0.5) * 20;
+      petal.style.left = `${e.pageX + offsetX}px`;
+      petal.style.top = `${e.pageY}px`;
+      petal.style.animation = `fall ${1 + Math.random() * 0.5}s ease-out forwards`;
+      document.body.appendChild(petal);
+      setTimeout(() => petal.remove(), 1500);
+    }
+
+    lastX = e.pageX;
+    lastY = e.pageY;
+    lastTime = now;
+  });
+</script>
+</body>
+</html>
