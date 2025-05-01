@@ -143,10 +143,9 @@
     animation: fall 1s ease-out forwards;
   }
   @keyframes fall {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(100px) scale(0.2) rotate(180deg); opacity: 0; }
+}
   100% {
     transform: translateY(100px) scale(0.2) rotate(180deg);
     opacity: 0;
@@ -265,54 +264,10 @@
   </main>
 
   <script>
-    function showLinks(event) {
-      event.stopPropagation();
-      const links = document.getElementById('social-links');
-      links.style.display = links.style.display === 'block' ? 'none' : 'block';
-      document.addEventListener('click', hideLinks);
-    }
-    function hideLinks() {
-      const links = document.getElementById('social-links');
-      links.style.display = 'none';
-      document.removeEventListener('click', hideLinks);
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const themeIcon = document.getElementById('themeIcon');
-      const toggle = document.getElementById('darkToggle');
-
-      const hour = new Date().getHours();
-      const prefersDark = hour >= 19;
-      if (prefersDark) {
-        document.body.classList.add('dark-mode');
-        toggle.classList.add('active');
-      }
-
-      const iconName = document.body.classList.contains('dark-mode') ? 'moon' : 'sun';
-      if (themeIcon) {
-        themeIcon.setAttribute('data-lucide', iconName);
-        lucide.createIcons();
-      }
-
-      toggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        toggle.classList.toggle('active');
-
-        const newIcon = document.body.classList.contains('dark-mode') ? 'moon' : 'sun';
-        if (themeIcon) {
-          themeIcon.animate([
-            { transform: 'rotate(0deg)' },
-            { transform: 'rotate(180deg)' }
-          ], {
-            duration: 400,
-            easing: 'ease-in-out'
-          });
-          themeIcon.setAttribute('data-lucide', newIcon);
-          lucide.createIcons();
-        }
-      });
-    });
-  </script>
+  // Temporarily disable animation logic to fix flickering and redeclaration issues
+  // Clean version will be added once confirmed
+  console.log("Petal animation disabled for debugging.");
+</script>
 <script>
   let lastX = 0;
   let lastY = 0;
@@ -351,3 +306,5 @@ document.addEventListener('mousemove', e => {
 </script>
 </body>
 </html>
+
+
